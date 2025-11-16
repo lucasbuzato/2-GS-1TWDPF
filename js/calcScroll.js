@@ -11,3 +11,15 @@ function fixScrollGap() {
 
 window.addEventListener("load", fixScrollGap);
 window.addEventListener("resize", fixScrollGap);
+
+
+const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("max-h-0");
+        mobileMenu.classList.toggle("opacity-0");
+
+        mobileMenu.classList.toggle("max-h-[500px]"); // altura final para animar
+        mobileMenu.classList.toggle("opacity-100");
+    });
