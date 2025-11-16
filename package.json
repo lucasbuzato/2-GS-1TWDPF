@@ -15,10 +15,11 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "npx tailwindcss -i ./src/input.css -o ./dist/style.css --watch"
   },
   "dependencies": {
     "@tailwindcss/cli": "^4.1.17",
+    "gsap": "^3.13.0",
     "tailwindcss": "^4.1.17"
   }
 }
