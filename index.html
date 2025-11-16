@@ -6,9 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./style.css" rel="stylesheet">
     <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 </head>
 
 <body class="overflow-x-hidden font-poppins">
+
+    <!-- Banner -->
     <section class="hero w-screen bg-cover bg-center h-screen px-[50px] text-Preto-Suave">
         <header class="flex flex-row w-full justify-between items-center pt-8">
             <h2 class="text-3xl">Logo</h2>
@@ -21,7 +25,15 @@
                     class="font-medium hover:bg-white hover:text-Roxo p-2 rounded-4xl duration-500">Ecossistemas</a>
                 <a href="" class="font-medium hover:bg-white hover:text-Roxo p-2 rounded-4xl duration-500">O Futuro</a>
             </div>
-            <button>DarkMode</button>
+            <!-- <button>DarkMode</button> -->
+            <label class="relative inline-flex items-center cursor-pointer">
+                <input type="checkbox" class="sr-only peer" />
+                <div class="w-14 h-8 bg-white peer-checked:bg-Roxo rounded-full transition-all duration-300">
+                </div>
+                <div
+                    class="absolute left-1 top-1 w-6 h-6 bg-Roxo peer-checked:bg-white  rounded-full transition-all duration-300 peer-checked:translate-x-5 shadow">
+                </div>
+            </label>
         </header>
         <main class="flex flex-col gap-6 h-[80%] justify-center">
             <h2 class="font-Orbitron text-Roxo text-4xl">O Futuro do trabalho</h2>
@@ -32,200 +44,348 @@
                 class="bg-Roxo font-regular text-white w-[150px] p-3 text-2xl text-center rounded-xl hover:bg-Roxo-Escuro duration-500">Explorar</a>
         </main>
     </section>
-    <section class="w-screen h-screen px-[50px]">
-        <h2 class="font-Orbitron text-6xl font-bold pt-[100px] pb-[50px] justify-self-end">As Carreiras em Alta Hoje
-        </h2>
-        <div class="grid grid-cols-4">
-            <div class="flex flex-col gap-7 w-50">
-                <h3 class="text-4xl font-Orbitron">Categorias</h3>
-                <a href=""
-                    class="bg-Roxo font-bold w-[376px] font-poppins p-3 text-white text-md text-center rounded-2xl ">Tecnologia
-                    e Inovação</a>
-                <a href=""
-                    class="bg-Roxo font-bold w-[376px] font-poppins p-3 text-white text-md text-center rounded-2xl ">Sustentabilidade
-                    e Meio Ambiente</a>
-                <a href=""
-                    class="bg-Roxo font-bold w-[376px] font-poppins p-3 text-white text-md text-center rounded-2xl ">Educação,
-                    Saúde e
-                    Desenvolvimento Humano</a>
-                <a href=""
-                    class="bg-Roxo font-bold w-[376px] font-poppins p-3 text-white text-md text-center rounded-2xl ">Negócios,
-                    Dados e Economia Digital</a>
-                <a href=""
-                    class="bg-Roxo font-bold w-[376px] font-poppins p-3 text-white text-md text-center rounded-2xl ">Indústria,
-                    Engenharia e Produção</a>
-            </div>
-            <div class="col-span-3 bg-Preto-Suave">
+    <!-- Fim Banner -->
+   
+    <!-- Section card Carreiras -->
+    <section class="w-full h-screen overflow-hidden pt-12 px-6 lg:px-16 relative">
 
+        <!-- Título fixo -->
+        <h2 class="font-Orbitron text-4xl lg:text-5xl pb-10 font-bold text-right">
+            As Carreiras em Alta Hoje
+        </h2>
+
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-10 h-[80vh]">
+
+            <!-- COLUNA DE CATEGORIAS (FIXA) -->
+            <div class="flex flex-col gap-3 justify-center">
+                <h3 class="text-xl lg:text-3xl font-Orbitron mb-3">Categorias</h3>
+
+                <a class="bg-Roxo hover:bg-Roxo-Escuro duration-500 font-bold w-full font-poppins p-3 text-white text-sm text-center rounded-2xl">
+                    Tecnologia e Inovação
+                </a>
+                <a class="bg-Roxo hover:bg-Roxo-Escuro duration-500 font-bold w-full font-poppins p-3 text-white text-sm text-center rounded-2xl">
+                    Sustentabilidade e Meio Ambiente
+                </a>
+                <a class="bg-Roxo hover:bg-Roxo-Escuro duration-500 font-bold w-full font-poppins p-3 text-white text-sm text-center rounded-2xl">
+                    Educação, Saúde e Desenvolvimento Humano
+                </a>
+                <a class="bg-Roxo hover:bg-Roxo-Escuro duration-500 font-bold w-full font-poppins p-3 text-white text-sm text-center rounded-2xl">
+                    Negócios, Dados e Economia Digital
+                </a>
+                <a class="bg-Roxo hover:bg-Roxo-Escuro duration-500 font-bold w-full font-poppins p-3 text-white text-sm text-center rounded-2xl">
+                    Indústria, Engenharia e Produção
+                </a>
+            </div>
+
+            <!-- GRID DOS CARDS (SCROLLAVEL) -->
+            <div class="lg:col-span-3 overflow-y-scroll h-full no-scrollbar scrollable ml-12">
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 scroll-fill my-2">
+
+                    <!-- CARD -->
+                    <div class="bg-gray-300 rounded-3xl p-6 flex flex-col justify-end h-96">
+                        <span class="bg-blue-400 text-white text-sm font-medium px-4 py-1 rounded-full w-fit mb-3">
+                            Categoria
+                        </span>
+                        <h2 class="text-xl font-bold text-gray-900">Título</h2>
+                        <p class="text-gray-700 text-sm mt-1">Área da Vaga</p>
+                        <p class="text-gray-700 text-sm">Formação Necessária</p>
+                    </div>
+
+                    <!-- CARD -->
+                    <div class="bg-gray-300 rounded-3xl p-6 flex flex-col justify-end h-96">
+                        <span class="bg-blue-400 text-white text-sm font-medium px-4 py-1 rounded-full w-fit mb-3">
+                            Categoria
+                        </span>
+                        <h2 class="text-xl font-bold text-gray-900">Título</h2>
+                        <p class="text-gray-700 text-sm mt-1">Área da Vaga</p>
+                        <p class="text-gray-700 text-sm">Formação Necessária</p>
+                    </div>
+
+                    <!-- CARD -->
+                    <div class="bg-gray-300 rounded-3xl p-6 flex flex-col justify-end h-96">
+                        <span class="bg-blue-400 text-white text-sm font-medium px-4 py-1 rounded-full w-fit mb-3">
+                            Categoria
+                        </span>
+                        <h2 class="text-xl font-bold text-gray-900">Título</h2>
+                        <p class="text-gray-700 text-sm mt-1">Área da Vaga</p>
+                        <p class="text-gray-700 text-sm">Formação Necessária</p>
+                    </div>
+
+                    <!-- CARD -->
+                    <div class="bg-gray-300 rounded-3xl p-6 flex flex-col justify-end h-96">
+                        <span class="bg-blue-400 text-white text-sm font-medium px-4 py-1 rounded-full w-fit mb-3">
+                            Categoria
+                        </span>
+                        <h2 class="text-xl font-bold text-gray-900">Título</h2>
+                        <p class="text-gray-700 text-sm mt-1">Área da Vaga</p>
+                        <p class="text-gray-700 text-sm">Formação Necessária</p>
+                    </div>
+
+                    <!-- CARD -->
+                    <div class="bg-gray-300 rounded-3xl p-6 flex flex-col justify-end h-96">
+                        <span class="bg-blue-400 text-white text-sm font-medium px-4 py-1 rounded-full w-fit mb-3">
+                            Categoria
+                        </span>
+                        <h2 class="text-xl font-bold text-gray-900">Título</h2>
+                        <p class="text-gray-700 text-sm mt-1">Área da Vaga</p>
+                        <p class="text-gray-700 text-sm">Formação Necessária</p>
+                    </div>
+
+                    <!-- CARD -->
+                    <div class="bg-gray-300 rounded-3xl p-6 flex flex-col justify-end h-96">
+                        <span class="bg-blue-400 text-white text-sm font-medium px-4 py-1 rounded-full w-fit mb-3">
+                            Categoria
+                        </span>
+                        <h2 class="text-xl font-bold text-gray-900">Título</h2>
+                        <p class="text-gray-700 text-sm mt-1">Área da Vaga</p>
+                        <p class="text-gray-700 text-sm">Formação Necessária</p>
+                    </div>
+
+                    <!-- CARD -->
+                    <div class="bg-gray-300 rounded-3xl p-6 flex flex-col justify-end h-96">
+                        <span class="bg-blue-400 text-white text-sm font-medium px-4 py-1 rounded-full w-fit mb-3">
+                            Categoria
+                        </span>
+                        <h2 class="text-xl font-bold text-gray-900">Título</h2>
+                        <p class="text-gray-700 text-sm mt-1">Área da Vaga</p>
+                        <p class="text-gray-700 text-sm">Formação Necessária</p>
+                    </div>
+
+                    <!-- CARD -->
+                    <div class="bg-gray-300 rounded-3xl p-6 flex flex-col justify-end h-96">
+                        <span class="bg-blue-400 text-white text-sm font-medium px-4 py-1 rounded-full w-fit mb-3">
+                            Categoria
+                        </span>
+                        <h2 class="text-xl font-bold text-gray-900">Título</h2>
+                        <p class="text-gray-700 text-sm mt-1">Área da Vaga</p>
+                        <p class="text-gray-700 text-sm">Formação Necessária</p>
+                    </div>
+
+                    <!-- CARD -->
+                    <div class="bg-gray-300 rounded-3xl p-6 flex flex-col justify-end h-96">
+                        <span class="bg-blue-400 text-white text-sm font-medium px-4 py-1 rounded-full w-fit mb-3">
+                            Categoria
+                        </span>
+                        <h2 class="text-xl font-bold text-gray-900">Título</h2>
+                        <p class="text-gray-700 text-sm mt-1">Área da Vaga</p>
+                        <p class="text-gray-700 text-sm">Formação Necessária</p>
+                    </div>
+
+                </div>
             </div>
         </div>
     </section>
-    <section class="w-screen h-auto px-[50px] flex flex-col items-center">
-        <h2 class="font-Orbitron text-6xl font-bold pt-[100px] pb-[50px] justify-center w-[1125px] text-center">A
-            Simbiose Humano-Tecnológica: <span class="font-Orbitron text-4xl font-light text-Roxo">Como Chegamos Até
-                Aqui</span> </h2>
-        <div class="grid grid-cols-2 grid-rows-3">
-            <div class="flex flex-col justify-self-start gap-5 pl-[115px] pr-[115px]">
+    <!-- Fim Section card Carreiras -->
+
+    <!-- Section simbiose -->
+    <section class="w-full h-auto pt-12 px-6 lg:px-16 flex flex-col items-center">
+
+        <!-- TÍTULO -->
+        <h2 class="font-Orbitron text-4xl lg:text-5xl font-bold pb-12 text-center">
+            A Simbiose Humano-Tecnológica:
+            <span class="block text-2xl lg:text-3xl font-light text-Roxo mt-2">
+                Como Chegamos Até Aqui
+            </span>
+        </h2>
+
+        <!-- GRID PRINCIPAL -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 max-w-7xl w-full items-center">
+
+            <!-- BLOCO ESQUERDO (Texto) -->
+            <div class="flex flex-col gap-6">
                 <h3 class="font-Orbitron text-lg text-Azul-Claro">A Base Atemporal</h3>
-                <h2 class="font-Orbitron text-3xl">As Habilidades Humanas</h2>
-                <p class="text-justify">Em 2035, a criatividade, a empatia e o pensamento crítico não são apenas 'soft
-                    skills'. São o núcleo estratégico que guia a tecnologia, garantindo que a inovação sirva ao
-                    propósito humano. Foi a valorização dessas competências que nos potencializou.</p>
-                <div class="border border-Preto-Suave rounded-2xl p-4 flex flex-row"><img class="px-2"
-                        src="./imgs/Computer 1.png" alt="">
-                    <p class="font-semibold">92% das IAs de decisão estratégica hoje requerem supervisão e validação
+
+                <h2 class="font-Orbitron text-2xl lg:text-3xl">As Habilidades Humanas</h2>
+
+                <p class="text-justify leading-relaxed">
+                    Em 2035, a criatividade, a empatia e o pensamento crítico não são apenas 'soft skills'.
+                    São o núcleo estratégico que guia a tecnologia, garantindo que a inovação sirva ao propósito humano.
+                    Foi a valorização dessas competências que nos potencializou.
+                </p>
+
+                <div class="border border-Preto-Suave rounded-2xl p-4 flex items-center gap-4">
+                    <img src="./imgs/Computer 1.png" class="w-10" alt="">
+                    <p class="font-semibold">
+                        92% das IAs de decisão estratégica hoje requerem supervisão e validação
                         <span class="text-Azul-Claro">criativa humana.</span>
                     </p>
                 </div>
             </div>
-            <div class="flex flex-col gap-7 pl-[100px] pr-[200px] text-center font-bold">
-                <div class="flex flex-row gap-7">
+
+            <!-- BLOCO DIREITO (Cards Azuis) -->
+            <div class="flex flex-col gap-7 items-end font-bold w-full ">
+
+                <!-- Linha 1 -->
+                <div class="flex flex-row gap-6">
                     <div
-                        class="bg-Azul-Claro w-50 h-35 flex flex-col justify-center items-center rounded-4xl shadow-xl/30 transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 ">
-                        <img src="./imgs/Robot.png" alt="">
+                        class="bg-Azul-Claro w-36 h-32 flex flex-col gap-2 justify-center items-center rounded-3xl shadow-lg transition hover:-translate-y-1 hover:scale-110">
+                        <img src="./imgs/Robot.svg" alt="">
                         <p>Criatividade</p>
                     </div>
+
                     <div
-                        class="bg-Azul-Claro w-50 h-35 flex flex-col justify-center items-center rounded-4xl shadow-xl/30 transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 ">
-                        <img src="./imgs/Robot.png" alt="">
+                        class="bg-Azul-Claro w-36 h-32 flex flex-col gap-2 justify-center items-center rounded-3xl shadow-lg transition hover:-translate-y-1 hover:scale-110">
+                        <img src="./imgs/Robot.svg" alt="">
                         <p>Empatia</p>
                     </div>
+
                     <div
-                        class="bg-Azul-Claro w-50 h-35 flex flex-col justify-center items-center rounded-4xl shadow-xl/30 transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
-                        <img src="./imgs/Robot.png" alt="">
+                        class="bg-Azul-Claro w-36 h-32 flex flex-col gap-2 justify-center items-center rounded-3xl shadow-lg transition hover:-translate-y-1 hover:scale-110">
+                        <img src="./imgs/Robot.svg" alt="">
                         <p>Comunicação</p>
                     </div>
                 </div>
-                <div class="flex flex-row gap-7 justify-self-end">
-                    <div class=" w-50 h-35"></div>
+
+                <!-- Linha 2 -->
+                <div class="flex flex-row gap-6">
+                    <div class="w-36 h-32"></div>
+
                     <div
-                        class="bg-Azul-Claro w-50 h-35 flex flex-col justify-center items-center rounded-4xl shadow-xl/30 transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
-                        <img src="./imgs/Robot.png" alt="">
-                        <p>Pensamento <br> Crítico </p>
+                        class="bg-Azul-Claro w-36 h-32 flex flex-col gap-2 justify-center items-center text-center rounded-3xl shadow-lg transition hover:-translate-y-1 hover:scale-110">
+                        <img src="./imgs/Robot.svg" alt="">
+                        <p>Pensamento<br>Crítico</p>
                     </div>
+
                     <div
-                        class="bg-Azul-Claro w-50 h-35 flex flex-col justify-center items-center rounded-4xl shadow-xl/30 transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
+                        class="bg-Azul-Claro w-36 h-32 flex flex-col gap-2 justify-center items-center rounded-3xl shadow-lg transition hover:-translate-y-1 hover:scale-110">
                         <img src="./imgs/Robot.png" alt="">
                         <p>Adaptabilidade</p>
                     </div>
                 </div>
             </div>
-            <div class="col-start-1 col-end-3">
-                <div class=" flex flex-col justify-center items-center text-center py-[50px] gap-5">
-                    <div class="bg-Cinza p-4 rounded-full">
-                        <img src="./imgs/Link 1.png" alt="">
-                    </div>
-                    <p class="text-2xl font-semibold">A simbiose não foi uma escolha. Foi a única resposta. Ao unir
-                        nossa <span class="text-Azul-Claro">intuição</span> à <span class="text-Roxo">precisão</span>
-                        dos dados,<br> construímos a base do trabalho de 2035.</p>
+
+            <!-- FRASE CENTRAL -->
+            <div class="col-span-1 lg:col-span-2 flex flex-col items-center text-center gap-5">
+                <div class="bg-Cinza p-4 rounded-full">
+                    <img src="./imgs/Link 1.png" alt="">
                 </div>
+                <p class="text-xl lg:text-2xl ">
+                    A simbiose não foi uma escolha. Foi a única resposta.
+                    Ao unir nossa <span class="text-Azul-Claro font-bold">intuição</span> à
+                    <span class="text-Roxo font-bold">precisão</span> dos dados,<br>
+                    construímos a base do trabalho de 2035.
+                </p>
             </div>
-            <div class="flex flex-col gap-7 pl-[100px] pr-[200px] text-center font-bold">
-                <div class="flex flex-row gap-7">
+
+            <!-- BLOCO DIREITO (Cards Roxos) -->
+            <div class="flex flex-col gap-7 items-start font-bold">
+
+                <div class="flex flex-row gap-6">
                     <div
-                        class="bg-Roxo  text-white w-50 h-35 flex flex-col justify-center items-center rounded-4xl shadow-xl/30 transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 ">
-                        <img src="./imgs/Robot.png" alt="">
+                        class="bg-Roxo text-white text-center w-36 h-32 flex flex-col gap-2 justify-center items-center rounded-3xl shadow-lg transition hover:-translate-y-1 hover:scale-110">
+                        <img src="./imgs/Robot.svg" class="invert brightness-0" alt="">
                         <p>Robótica</p>
                     </div>
+
                     <div
-                        class="bg-Roxo  text-white w-50 h-35 flex flex-col justify-center items-center rounded-4xl shadow-xl/30 transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 ">
-                        <img src="./imgs/Robot.png" alt="">
+                        class="bg-Roxo text-white text-center w-36 h-32 flex flex-col gap-2 justify-center items-center rounded-3xl shadow-lg transition hover:-translate-y-1 hover:scale-110">
+                        <img src="./imgs/Robot.svg" class="invert brightness-0" alt="">
                         <p>Automação</p>
                     </div>
+
                     <div
-                        class="bg-Roxo  text-white w-50 h-35 flex flex-col justify-center items-center rounded-4xl shadow-xl/30 transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
-                        <img src="./imgs/Robot.png" alt="">
-                        <p>Inteligência <br> Artificial</p>
+                        class="bg-Roxo text-white text-center w-36 h-32 flex flex-col gap-2 justify-center items-center rounded-3xl shadow-lg transition hover:-translate-y-1 hover:scale-110">
+                        <img src="./imgs/Robot.svg" class="invert brightness-0" alt="">
+                        <p>Inteligência<br>Artificial</p>
                     </div>
                 </div>
-                <div class="flex flex-row gap-7 justify-self-end">
 
+                <div class="flex gap-6">
                     <div
-                        class="bg-Roxo text-white w-50 h-35 flex flex-col justify-center items-center rounded-4xl shadow-xl/30 transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
-                        <img src="./imgs/Robot.png" alt="">
-                        <p>Computação <br> Criativa
+                        class="bg-Roxo text-white text-center w-36 h-32 flex flex-col gap-2 justify-center items-center rounded-3xl shadow-lg transition hover:-translate-y-1 hover:scale-110">
+                        <img src="./imgs/Robot.svg" class="invert brightness-0" alt="">
+                        <p>Computação<br>Criativa</p>
                     </div>
-
                 </div>
             </div>
-            <div class="flex flex-col justify-self-start gap-5 pl-[115px] pr-[115px]">
+
+            <!-- BLOCO ESQUERDO (Ferramentas Tecnológicas) -->
+            <div class="flex flex-col gap-6">
                 <h3 class="font-Orbitron text-lg text-Roxo">O Motor da Transformação</h3>
-                <h2 class="font-Orbitron text-3xl">As Ferramentas Tecnológicas</h2>
-                <p class="text-justify">A IA e a automação são hoje parceiras criativas, acelerando a descoberta e
-                    permitindo que soluções antes impossíveis se tornassem realidade. São o mais poderoso conjunto de
-                    ferramentas que a humanidade já construiu.</p>
-                <div class="flex flex-col">
-                    <div class="flex flex-row justify-between items-center">
+
+                <h2 class="font-Orbitron text-2xl lg:text-3xl">As Ferramentas Tecnológicas</h2>
+
+                <p class="text-justify leading-relaxed">
+                    A IA e a automação são hoje parceiras criativas, acelerando a descoberta
+                    e permitindo que soluções antes impossíveis se tornassem realidade.
+                    São o mais poderoso conjunto de ferramentas que a humanidade já construiu.
+                </p>
+
+                <div class="flex flex-col gap-1">
+                    <div class="flex items-center justify-between">
                         <h3 class="font-bold text-lg">Automação de Tarefas Repetitivas</h3>
                         <p class="font-semibold text-sm">95%</p>
                     </div>
                     <img src="./imgs/linha80 (1).png" alt="">
                 </div>
-                <div>
-                    <div class="flex flex-row justify-between items-center">
+
+                <div class="flex flex-col gap-1">
+                    <div class="flex items-center justify-between">
                         <h3 class="font-bold text-lg">IA como Co-piloto Criativo</h3>
                         <p class="font-semibold text-sm">80%</p>
                     </div>
                     <img src="./imgs/linha80 (1).png" alt="">
                 </div>
             </div>
-
-
-
         </div>
-
     </section>
-    <section class="w-screen h-screen px-[50px] flex flex-col pt-[100px] pb-[50px] flex-wrap">
+    <!-- Fim Section simbiose -->
+
+    <!-- Section chico bento -->
+    <section class="w-full flex flex-col pt-12 px-6 lg:px-16 flex-wrap">
         <div class="grid grid-cols-4 grid-rows-2 gap-5 h-full">
-            <div class="col-span-2 bg-Verde rounded-2xl flex justify-center items-center">
-                <h2 class="text-6xl font-Orbitron text-white text-center font-bold">Tecnologia com <br> Propósito - <br>
-                    Empresas que <br> Humanizam o Futuro</h2>
+            <div class="col-span-2 relative bg-Verde rounded-2xl p-12 flex flex-col justify-center items-center
+            cut-top-left cut-bottom-right">
+                <h2 class="text-2xl lg:text-4xl font-Orbitron text-white text-center font-bold">Tecnologia com Propósito - </h2>
+                <h2 class="text-2xl lg:text-4xl font-Orbitron text-white text-center font-bold">Empresas que Humanizam o Futuro </h2>    
             </div>
-            <div class="bg-Roxo-Claro rounded-2xl flex flex-col justify-center p-5 gap-5 text-white items-center">
-                <h2 class="font-bold text-3xl text-center">Tecnologia a Serviço
+            <div class="bg-Roxo-Claro rounded-2xl flex flex-col justify-center py-6 px-4 gap-5 text-white items-center">
+                <h2 class="font-bold text-xl lg:text-2xl text-center">Tecnologia a Serviço
                     das Pessoas</h2>
-                <p class="text-xl text-justify">
+                <p class="text-sm text-justify">
                     A inovação deve existir para ampliar o potencial humano — não para substituí-lo. Quando as empresas
                     usam a tecnologia como aliada, o trabalho se torna mais criativo e menos mecânico.</p>
             </div>
             <div class="bg-Verde row-span-2 rounded-2xl flex flex-col justify-center p-5 gap-5 text-white items-center">
-                <h2 class="font-bold text-3xl text-center">Valorização das
+                <h2 class="font-bold text-xl lg:text-2xl text-center">Valorização das
                     Relações Humanas</h2>
-                <p class="text-xl text-center">
+                <p class="text-md text-center">
 
                     Mesmo em um mundo automatizado, empatia e colaboração continuam sendo o que mantém as equipes vivas.
                     Ferramentas mudam; conexões permanecem.</p>
             </div>
-            <div class="bg-Roxo rounded-2xl flex flex-col justify-center p-5 gap-5 text-white items-center">
-                <h2 class="font-bold text-3xl text-center">Otimizar, Não Desumanizar</h2>
-                <p class="text-xl text-justify">
+            <div class="bg-Roxo rounded-2xl flex flex-col justify-center py-6 px-4 gap-5 text-white items-center">
+                <h2 class="font-bold text-xl lg:text-2xl text-center">Otimizar, Não Desumanizar</h2>
+                <p class="text-sm text-justify">
 
                     A inovação deve existir para ampliar o potencial humano — não para substituí-lo.Quando as empresas
                     usam a tecnologia como aliada, o trabalho se torna mais criativo e menos mecânico.</p>
             </div>
-            <div class="bg-Azul-Claro rounded-2xl flex flex-col justify-center p-5 gap-5 text-white items-center">
-                <h2 class="font-bold text-3xl text-center">Otimizar, Não Desumanizar</h2>
-                <p class="text-xl text-justify">
+            <div class="bg-Azul-Claro rounded-2xl flex flex-col justify-center py-6 px-4 gap-5 text-white items-center">
+                <h2 class="font-bold text-xl lg:text-2xl text-center">Otimizar, Não Desumanizar</h2>
+                <p class="text-sm text-justify">
 
                     Automação não é sobre cortar pessoas, e sim sobre libertá-las de tarefas repetitivas. A tecnologia
                     deve abrir espaço para o pensamento crítico e a inovação. </p>
             </div>
-            <div class="bg-Roxo-Claro rounded-2xl flex flex-col justify-center p-5 gap-5 text-white items-center">
-                <h2 class="font-bold text-3xl text-center">Propósito como <br>
+            <div class="bg-Roxo-Claro rounded-2xl flex flex-col justify-center py-6 px-4 gap-5 text-white items-center">
+                <h2 class="font-bold text-xl lg:text-2xl text-center">Propósito como <br>
                     Norte</h2>
-                <p class="text-xl text-justify">
+                <p class="text-sm text-justify">
 
                     O verdadeiro avanço está em usar a tecnologia com intenção. Quando o propósito guia as decisões, a
                     inovação se torna um instrumento de evolução coletiva.</p>
             </div>
         </div>
     </section>
+    <!-- Section chico bento -->
 
-    <section class="w-screen min-h-screen px-[50px] flex flex-col items-center">
+    <section class="w-full min-h-dvh pt-12 px-6 lg:px-16 flex flex-col items-center">
 
-        <h2 class="font-Orbitron text-6xl font-bold pt-[100px] pb-[50px] text-center">
+        <h2 class="font-Orbitron text-4xl lg:text-5xl font-bold pb-10 text-center">
             Ecossistemas de Trabalho de 2035 <br>
-            <span class="text-Roxo font-normal text-4xl">
+            <span class="text-Roxo font-normal text-2xl lg:text-3xl">
                 Clique em um ecossistema para explorar onde a inovação acontece hoje.
             </span>
         </h2>
@@ -356,52 +516,58 @@
                     </div>
                 </div>
             </details>
-
         </div>
     </section>
-    <section class="w-screen min-h-screen px-[50px] flex flex-col items-center justify-end relative">
 
-    <!-- CARD (AGORA RELATIVE) -->
-    <div class="relative bg-Roxo w-[460px] h-[350px] rounded-t-4xl flex flex-col justify-start py-10 items-center">
+    <!-- Section nuvem de palavras -->
+    <section class="w-full min-h-dvh pt-12 px-6 lg:px-16 flex flex-col items-center justify-end relative">
 
- 
-        <div class="absolute bottom-full mb-6 w-full text-center">
-            <h2 class="font-Orbitron text-5xl font-bold">
-                O Futuro está <br> em Suas Mãos
-            </h2>
+        <!-- CARD (AGORA RELATIVE) -->
+        <div class="relative bg-Roxo w-[460px] h-[350px] rounded-t-4xl flex flex-col justify-start py-10 items-center">
+            <div class="absolute bottom-full mb-6 w-full text-center flex flex-col gap-4">
+                <h2 class="font-Orbitron text-5xl font-bold">
+                    O Futuro está em Suas Mãos
+                </h2>
 
-            <p class="text-Roxo font-normal text-xl font-poppins mt-2">
-                No futuro do trabalho, o que ainda será 100% humano? <br>
-                Compartilhe sua visão e veja o que outras mentes pensam.
+                <p class="text-Roxo font-normal text-xl font-poppins mt-2 -mx-20 text-center">
+                    No futuro do trabalho, o que ainda será 100% humano?
+                    Compartilhe sua visão e veja o que outras mentes pensam.
+                </p>
+            </div>
+
+            <form action="" class="flex flex-col justify-start items-center">
+                <div class="relative w-[400px]">
+                    <input class="w-full py-3 rounded-3xl bg-white text-gray-800 pl-10 placeholder-gray-400" type="text"
+                        placeholder="Digite uma Palavra">
+                    <!-- Ícone de mais do Font Awesome -->
+                    <span
+                        class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 text-lg cursor-pointer">
+                        <i class="fa-solid fa-plus"></i>
+                    </span>
+                </div>
+
+                <button class="bg-white text-Roxo font-semibold w-65 py-2 rounded-4xl m-5">
+                    Adicionar
+                </button>
+            </form>
+
+
+            <p class="text-center text-white text-xl mx-2 mt-9">
+                Adicione uma palavra que ache interessante, ou clique em uma das palavras que mais te inspire
             </p>
         </div>
 
-    
-        <form action="" class="flex flex-col justify-start items-center">
-            <input class="w-100 py-3 rounded-4xl bg-white placeholder:px-5" 
-                   type="text" placeholder="Digite uma Palavra">
+    </section>
+    <!-- Section nuvem de palavras -->
 
-            <button class="bg-white text-Preto-Suave w-65 py-2 rounded-4xl m-5">
-                Adicionar
-            </button>
-        </form>
+    <footer class="h-[272px] w-screen bg-Roxo">
+        <h2 class="text-2xl text-white p-5">Footer</h2>
+        <div>
 
-        <p class="text-center text-white text-xl">
-            Adicione uma palavra que ache <br>
-            interessante, ou clique em uma das <br>
-            palavras que mais te inspire
-        </p>
-    </div>
+        </div>
+    </footer>
 
-</section>
 
-<footer class="h-[272px] w-screen bg-Roxo">
-<h2 class="text-2xl text-white p-5">Footer</h2>
-<div>
-
-</div>
-</footer>
-
+    <script src="./js/calcScroll.js"></script>
 </body>
-
 </html>
