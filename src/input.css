@@ -19,6 +19,67 @@
     background-size: cover;
     background-position: center;
 }
+
+/* Remove totalmente a barra de scroll */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none; /* IE e Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+/* Faz o conteúdo ocupar o espaço da scrollbar escondida */
+.scroll-fill {
+  width: calc(100% + var(--scrollbar-width, 0px));
+  margin-right: calc(var(--scrollbar-width, 0px) * -1);
+} 
+
+.cut-top-left::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;   /* tamanho do corte */
+    height: 40px;
+    border-top-left-radius: 1rem; /* igual ao rounded-2xl */
+    background: white; /* cor do fundo que cria o corte */
+  }
+
+  .cut-top-right::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    border-top-right-radius: 1rem;
+    background: white;
+  }
+
+  .cut-bottom-left::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    border-bottom-left-radius: 1rem;
+    background: white;
+  }
+
+  .cut-bottom-right::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    border-bottom-right-radius: 1rem;
+    background: white;
+  }
+
 details > summary {
   list-style: none;
 }
