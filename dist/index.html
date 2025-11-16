@@ -13,38 +13,72 @@
 <body class="overflow-x-hidden font-poppins">
 
     <!-- Banner -->
-    <section class="hero w-screen bg-cover bg-center h-screen px-[50px] text-Preto-Suave">
-        <header class="flex flex-row w-full justify-between items-center pt-8">
-            <h2 class="text-3xl">Logo</h2>
-            <div class="text-xl bg-Roxo text-white px-[75px] h-14 flex justify-center items-center gap-10 rounded-4xl">
-                <a href="" class="font-medium hover:bg-white hover:text-Roxo p-2 rounded-4xl duration-500">Carreiras</a>
-                <a href=""
-                    class="font-medium hover:bg-white hover:text-Roxo p-2 rounded-4xl duration-500">Habilidades</a>
-                <a href="" class="font-medium hover:bg-white hover:text-Roxo p-2 rounded-4xl duration-500">Empresas</a>
-                <a href=""
-                    class="font-medium hover:bg-white hover:text-Roxo p-2 rounded-4xl duration-500">Ecossistemas</a>
-                <a href="" class="font-medium hover:bg-white hover:text-Roxo p-2 rounded-4xl duration-500">O Futuro</a>
-            </div>
-            <!-- <button>DarkMode</button> -->
+   <section class="hero w-screen bg-cover bg-center h-screen px-[50px] text-Preto-Suave relative">
+
+    <!-- HEADER -->
+    <header class="w-full flex items-center justify-between pt-8 relative">
+
+        <!-- Logo -->
+        <h2 class="text-3xl">Logo</h2>
+
+        <!-- NAV — VISÍVEL APENAS NO LG PRA CIMA -->
+        <nav class="hidden lg:flex bg-Roxo text-white px-10 py-3 rounded-4xl gap-10 text-lg">
+            <a href="" class="hover:bg-white hover:text-Roxo px-2 py-1 rounded-4xl duration-300">Carreiras</a>
+            <a href="" class="hover:bg-white hover:text-Roxo px-2 py-1 rounded-4xl duration-300">Habilidades</a>
+            <a href="" class="hover:bg-white hover:text-Roxo px-2 py-1 rounded-4xl duration-300">Empresas</a>
+            <a href="" class="hover:bg-white hover:text-Roxo px-2 py-1 rounded-4xl duration-300">Ecossistemas</a>
+            <a href="" class="hover:bg-white hover:text-Roxo px-2 py-1 rounded-4xl duration-300">O Futuro</a>
+        </nav>
+
+        <div class="flex items-center gap-4">
+
             <label class="relative inline-flex items-center cursor-pointer">
                 <input type="checkbox" class="sr-only peer" />
-                <div class="w-14 h-8 bg-white peer-checked:bg-Roxo rounded-full transition-all duration-300">
-                </div>
+                <div class="w-14 h-8 bg-white peer-checked:bg-Roxo rounded-full transition-all duration-300"></div>
                 <div
-                    class="absolute left-1 top-1 w-6 h-6 bg-Roxo peer-checked:bg-white  rounded-full transition-all duration-300 peer-checked:translate-x-5 shadow">
+                    class="absolute left-1 top-1 w-6 h-6 bg-Roxo peer-checked:bg-white rounded-full transition-all duration-300 peer-checked:translate-x-5 shadow">
                 </div>
             </label>
-        </header>
-        <main class="flex flex-col gap-6 h-[80%] justify-center">
-            <h2 class="font-Orbitron text-Roxo text-4xl">O Futuro do trabalho</h2>
-            <h1 class="font-Orbitron text-6xl font-bold w-[845px]">Bem-vindo a 2035. O trabalho se reinventou</h1>
-            <h4 class="text-2xl text-gray-600 w-[572px]">Entre máquinas inteligentes e mentes criativas, surge uma nova
-                era — mais humana, mais conectada e mais inspiradora.</h4>
-            <a href=""
-                class="bg-Roxo font-regular text-white w-[150px] p-3 text-2xl text-center rounded-xl hover:bg-Roxo-Escuro duration-500">Explorar</a>
-        </main>
-    </section>
-    <!-- Fim Banner -->
+
+            <!-- HAMBÚRGUER — APARECE SOMENTE NO SM / MD -->
+            <button id="menuBtn" class="lg:hidden text-Roxo text-4xl font-bold cursor-pointer">
+                ☰
+            </button>
+
+        </div>
+
+        <!-- MENU MOBILE DROPDOWN -->
+        <div id="mobileMenu"
+            class="absolute top-[90px] left-0 w-full bg-Roxo text-white flex-col px-10 py-6 rounded-3xl text-xl gap-6 max-h-0 overflow-hidden opacity-0 transition-all duration-500">
+
+            <a href="" class="hover:bg-white hover:text-Roxo p-3 rounded-2xl duration-300 block">Carreiras</a>
+            <a href="" class="hover:bg-white hover:text-Roxo p-3 rounded-2xl duration-300 block">Habilidades</a>
+            <a href="" class="hover:bg-white hover:text-Roxo p-3 rounded-2xl duration-300 block">Empresas</a>
+            <a href="" class="hover:bg-white hover:text-Roxo p-3 rounded-2xl duration-300 block">Ecossistemas</a>
+            <a href="" class="hover:bg-white hover:text-Roxo p-3 rounded-2xl duration-300 block">O Futuro</a>
+
+        </div>
+
+    </header>
+
+    <main class="flex flex-col gap-6 h-[80%] justify-center">
+        <h2 class="font-Orbitron text-Roxo text-2xl lg:text-4xl">O Futuro do trabalho</h2>
+        <h1 class="font-Orbitron text-2xl md:text-4xl lg:text-6xl font-bold lg:w-[845px]">
+            Bem-vindo a 2035. O trabalho se reinventou
+        </h1>
+        <h4 class="text-lg lg:text-2xl text-gray-600 w-[472px] lg:w-[572px]">
+            Entre máquinas inteligentes e mentes criativas, surge uma nova era — mais humana, mais conectada e mais inspiradora.
+        </h4>
+        <a href=""
+            class="bg-Roxo font-regular text-white w-[150px] p-3 lg:p-2 lg:text-2xl text-lg text-center rounded-xl hover:bg-Roxo-Escuro duration-500">
+            Explorar
+        </a>
+    </main>
+
+</section>
+
+
+
    
     <!-- Section card Carreiras -->
     <section class="w-full h-screen overflow-hidden pt-12 px-6 lg:px-16 relative">
@@ -332,198 +366,205 @@
     </section>
     <!-- Fim Section simbiose -->
 
-    <!-- Section chico bento -->
-    <section class="w-full flex flex-col pt-12 px-6 lg:px-16 flex-wrap">
-        <div class="grid grid-cols-4 grid-rows-2 gap-5 h-full">
-            <div class="col-span-2 relative bg-Verde rounded-2xl p-12 flex flex-col justify-center items-center
-            cut-top-left cut-bottom-right">
-                <h2 class="text-2xl lg:text-4xl font-Orbitron text-white text-center font-bold">Tecnologia com Propósito - </h2>
-                <h2 class="text-2xl lg:text-4xl font-Orbitron text-white text-center font-bold">Empresas que Humanizam o Futuro </h2>    
-            </div>
-            <div class="bg-Roxo-Claro rounded-2xl flex flex-col justify-center py-6 px-4 gap-5 text-white items-center">
-                <h2 class="font-bold text-xl lg:text-2xl text-center">Tecnologia a Serviço
-                    das Pessoas</h2>
-                <p class="text-sm text-justify">
-                    A inovação deve existir para ampliar o potencial humano — não para substituí-lo. Quando as empresas
-                    usam a tecnologia como aliada, o trabalho se torna mais criativo e menos mecânico.</p>
-            </div>
-            <div class="bg-Verde row-span-2 rounded-2xl flex flex-col justify-center p-5 gap-5 text-white items-center">
-                <h2 class="font-bold text-xl lg:text-2xl text-center">Valorização das
-                    Relações Humanas</h2>
-                <p class="text-md text-center">
+<!-- Section chico bento -->
+<section class="w-full flex flex-col pt-12 px-6 lg:px-16">
 
-                    Mesmo em um mundo automatizado, empatia e colaboração continuam sendo o que mantém as equipes vivas.
-                    Ferramentas mudam; conexões permanecem.</p>
-            </div>
-            <div class="bg-Roxo rounded-2xl flex flex-col justify-center py-6 px-4 gap-5 text-white items-center">
-                <h2 class="font-bold text-xl lg:text-2xl text-center">Otimizar, Não Desumanizar</h2>
-                <p class="text-sm text-justify">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:grid-rows-2 gap-5 md:h-screen">
 
-                    A inovação deve existir para ampliar o potencial humano — não para substituí-lo.Quando as empresas
-                    usam a tecnologia como aliada, o trabalho se torna mais criativo e menos mecânico.</p>
-            </div>
-            <div class="bg-Azul-Claro rounded-2xl flex flex-col justify-center py-6 px-4 gap-5 text-white items-center">
-                <h2 class="font-bold text-xl lg:text-2xl text-center">Otimizar, Não Desumanizar</h2>
-                <p class="text-sm text-justify">
-
-                    Automação não é sobre cortar pessoas, e sim sobre libertá-las de tarefas repetitivas. A tecnologia
-                    deve abrir espaço para o pensamento crítico e a inovação. </p>
-            </div>
-            <div class="bg-Roxo-Claro rounded-2xl flex flex-col justify-center py-6 px-4 gap-5 text-white items-center">
-                <h2 class="font-bold text-xl lg:text-2xl text-center">Propósito como <br>
-                    Norte</h2>
-                <p class="text-sm text-justify">
-
-                    O verdadeiro avanço está em usar a tecnologia com intenção. Quando o propósito guia as decisões, a
-                    inovação se torna um instrumento de evolução coletiva.</p>
-            </div>
+        <!-- CARD TÍTULO -->
+        <div class="col-span-1 md:col-span-2 bg-Verde rounded-2xl p-12 flex flex-col justify-center items-center">
+            <h2 class="text-2xl lg:text-4xl font-Orbitron text-white text-center font-bold">
+                Tecnologia com Propósito -
+            </h2>
+            <h2 class="text-2xl lg:text-4xl font-Orbitron text-white text-center font-bold">
+                Empresas que Humanizam o Futuro
+            </h2>
         </div>
-    </section>
-    <!-- Section chico bento -->
 
-    <section class="w-full min-h-dvh pt-12 px-6 lg:px-16 flex flex-col items-center">
-
-        <h2 class="font-Orbitron text-4xl lg:text-5xl font-bold pb-10 text-center">
-            Ecossistemas de Trabalho de 2035 <br>
-            <span class="text-Roxo font-normal text-2xl lg:text-3xl">
-                Clique em um ecossistema para explorar onde a inovação acontece hoje.
-            </span>
-        </h2>
-
-        <div class="w-full max-w-[1100px] space-y-6">
-
-            <details class="group bg-Cinza rounded-2xl shadow-[0_4px_20px_rgba(145,63,228,38)] p-4 w-full">
-                <summary class="flex items-center justify-between cursor-pointer">
-                    <div class="flex items-center gap-3">
-                        <div class="w-3 h-3 rounded-full bg-Roxo"></div>
-                        <h3 class="font-poppins font-bold text-lg">
-                            DAOs de Propósito
-                        </h3>
-                        <span class="text-xs bg-Roxo-Claro text-white px-3 py-1 rounded-full font-Poppins">
-                            Modelo Descentralizado
-                        </span>
-                    </div>
-                    <img class="transition-transform group-open:rotate-180"
-                        src="./imgs/arrow-down-sign-to-navigate 1.png" alt="">
-
-                </summary>
-
-                <div class="mt-4 pl-6 p-3 text-sm flex flex-row font-Poppins border-t-3 border-Preto-Suave">
-                    <div class="flex flex-col m-3">
-                        <p class="text-justify">Esqueça as hierarquias. Nas DAOs, seu valor é sua contribuição. Talentos
-                            globais se unem em missões, governados por código e um propósito compartilhado.</p>
-                        <img src="" alt="">
-                    </div>
-                    <div class="bg-white p-5 rounded-2xl m m-3">
-                        <h2 class="font-bold text-xl">Case de Sucesso: Projeto Netuno (2032 )</h2>
-                        <p class="text-justify">A DAO 'Ocean Guardians' mobilizou 5.000 especialistas em 72 horas para
-                            desenvolver drones autônomos de limpeza, removendo 1 milhão de toneladas de plástico do
-                            Pacífico em 3 anos.</p>
-                        <div class="flex flex-col mt-5">
-                            <h3 class="font-bold text-xl">Profissões Relacionadas:</h3>
-                            <div class="flex flex-row gap-3 mt-2">
-                                <a class="p-1 text-[10px] bg-Roxo-Claro text-white rounded-2xl">Eng. de Contratos
-                                    Inteligentes</a>
-                                <a class="p-1 text-[10px] bg-Roxo-Claro text-white rounded-2xl">Especialista em
-                                    Governança</a>
-                                <a class="p-1 text-[10px] bg-Roxo-Claro text-white rounded-2xl">Coord. de Missão
-                                    Comunitária</a>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </details>
-
-            <details class="group bg-Cinza rounded-2xl shadow-[0_4px_20px_rgba(0,210,106,38)] p-4 w-full">
-                <summary class="flex items-center justify-between cursor-pointer">
-                    <div class="flex items-center gap-3">
-                        <div class="w-3 h-3 rounded-full bg-Verde"></div>
-                        <h3 class="font-poppins font-bold text-lg">
-                            Hubs de Bio-Inovação
-                        </h3>
-                        <span class="text-xs bg-Verde text-white px-3 py-1 rounded-full font-Poppins">
-                            Modelo Regenerativo
-                        </span>
-                    </div>
-                    <img class="transition-transform group-open:rotate-180"
-                        src="./imgs/arrow-down-sign-to-navigate 1.png" alt="">
-
-                </summary>
-
-                <div class="mt-4 pl-6 p-3 text-sm flex flex-row font-Poppins border-t-3 border-Preto-Suave">
-                    <div class="flex flex-col m-3">
-                        <p class="text-justify">Laboratórios onde biólogos, designers e IA co-criam soluções, usando
-                            materiais vivos e computação orgânica para um futuro sustentável.</p>
-                        <img src="" alt="">
-                    </div>
-                    <div class="bg-white p-5 rounded-2xl m m-3">
-                        <h2 class="font-bold text-xl">Princípio Chave: Simbiose Natural</h2>
-                        <p class="text-justify">Em vez de extrair, nós colaboramos. Usamos a lógica da natureza,
-                            otimizada por IA, para criar produtos que não geram lixo, pois são projetados para retornar
-                            ao ciclo biológico.</p>
-                        <div class="flex flex-col mt-5">
-                            <h3 class="font-bold text-xl">Profissões Relacionadas:</h3>
-                            <div class="flex flex-row gap-3 mt-2">
-                                <a class="p-1 text-[10px] bg-Verde text-white rounded-2xl">Designer de Materiais
-                                    Vivos</a>
-                                <a class="p-1 text-[10px] bg-Verde text-white rounded-2xl">Arquiteto de Computação
-                                    Orgânica</a>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </details>
-
-            <details class="group bg-Cinza rounded-2xl shadow-[0_4px_20px_rgba(51,193,255,38)] p-4 w-full">
-                <summary class="flex items-center justify-between cursor-pointer">
-                    <div class="flex items-center gap-3">
-                        <div class="w-3 h-3 rounded-full bg-Azul-Claro"></div>
-                        <h3 class="font-poppins font-bold text-lg">
-                            Plataformas de Talentos
-                        </h3>
-                        <span class="text-xs bg-Azul-Claro text-white px-3 py-1 rounded-full font-Poppins">
-                            Modelo Adaptativo
-                        </span>
-                    </div>
-                    <img class="transition-transform group-open:rotate-180"
-                        src="./imgs/arrow-down-sign-to-navigate 1.png" alt="">
-
-                </summary>
-
-                <div class="mt-4 pl-6 p-3 text-sm flex flex-row font-Poppins border-t-3 border-Preto-Suave">
-                    <div class="flex flex-col m-3">
-                        <p class="text-justify">Sua carreira não é um cargo, é um portfólio de habilidades. Estas
-                            plataformas usam IA para projetar seu crescimento e conectar você a novos desafios.</p>
-                        <img src="" alt="">
-                    </div>
-                    <div class="bg-white p-5 rounded-2xl m m-3">
-                        <h2 class="font-bold text-xl">Mecanismo Central: Skill-Graph IA</h2>
-                        <p class="text-justify">Uma IA proprietária mapeia as competências de todos os membros e as
-                            cruza com as demandas de projetos futuros, criando trilhas de aprendizado personalizadas
-                            para fechar os 'gaps' de habilidade.</p>
-                        <div class="flex flex-col mt-5">
-                            <h3 class="font-bold text-xl">Profissões Relacionadas:</h3>
-                            <div class="flex flex-row gap-3 mt-2">
-                                <a class="p-1 text-[10px] bg-Azul-Claro text-white rounded-2xl">Curador de Conteúdo com
-                                    IA</a>
-                                <a class="p-1 text-[10px] bg-Azul-Claro text-white rounded-2xl">Coach de Carreira
-                                    Preditivo</a>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </details>
+        <!-- CARD 2 -->
+        <div class="bg-Roxo-Claro rounded-2xl flex flex-col justify-center p-6 gap-5 text-white items-center">
+            <h2 class="font-bold text-xl lg:text-2xl text-center">Tecnologia a Serviço das Pessoas</h2>
+            <p class="xl:text-lg text-justify text-sm">
+               A inovação deve existir para ampliar o potencial humano — não para substituí-lo. Quando as empresas
+                    usam a tecnologia como aliada, o trabalho se torna mais criativo e menos mecânico.
+            </p>
         </div>
-    </section>
+
+        <!-- CARD ALTO -->
+        <div class="bg-Verde row-span-1 md:row-span-2 rounded-2xl flex flex-col justify-center p-5 gap-5 text-white items-center">
+            <h2 class="font-bold text-xl lg:text-2xl text-center">Valorização das Relações Humanas</h2>
+            <p class="xl:text-lg text-center text-sm">
+               Mesmo em um mundo automatizado, empatia e colaboração continuam sendo o que mantém as equipes vivas.
+                    Ferramentas mudam; conexões permanecem.
+            </p>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="bg-Roxo rounded-2xl flex flex-col justify-center p-6 gap-5 text-white items-center">
+            <h2 class="font-bold text-xl lg:text-2xl text-center">Otimizar, Não Desumanizar</h2>
+            <p class="xl:text-lg text-justify text-sm">
+                A inovação deve existir para ampliar o potencial humano — não para substituí-lo.Quando as empresas
+                    usam a tecnologia como aliada, o trabalho se torna mais criativo e menos mecânico.
+            </p>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="bg-Azul-Claro rounded-2xl flex flex-col justify-center p-6 gap-5 text-white items-center">
+            <h2 class="font-bold text-xl lg:text-2xl text-center">Otimizar, Não Desumanizar</h2>
+            <p class="xl:text-lg text-justify text-sm">
+                Automação não é sobre cortar pessoas, e sim sobre libertá-las de tarefas repetitivas. A tecnologia
+                    deve abrir espaço para o pensamento crítico e a inovação.
+            </p>
+        </div>
+
+        <!-- CARD 5 -->
+        <div class="bg-Roxo-Claro rounded-2xl flex flex-col justify-center p-6 gap-5 text-white items-center">
+            <h2 class="font-bold text-xl lg:text-2xl text-center">Propósito como Norte</h2>
+            <p class="xl:text-lg text-justify text-sm">
+                O verdadeiro avanço está em usar a tecnologia com intenção. Quando o propósito guia as decisões, a
+                    inovação se torna um instrumento de evolução coletiva.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+
+
+<!-- Section chico bento 2 -->
+<section class="w-full min-h-dvh pt-12 px-6 lg:px-16 flex flex-col items-center">
+
+    <h2 class="font-Orbitron text-4xl lg:text-5xl font-bold pb-10 text-center">
+        Ecossistemas de Trabalho de 2035 <br>
+        <span class="text-Roxo font-normal text-2xl lg:text-3xl">
+            Clique em um ecossistema para explorar onde a inovação acontece hoje.
+        </span>
+    </h2>
+
+    <div class="w-full max-w-[1100px] space-y-6">
+
+        <details class="group bg-Cinza rounded-2xl shadow-[0_4px_20px_rgba(145,63,228,38)] p-4 w-full">
+            <summary class="flex items-center justify-between cursor-pointer">
+                <div class="flex items-center gap-3">
+                    <div class="w-3 h-3 rounded-full bg-Roxo"></div>
+                    <h3 class="font-poppins font-bold text-lg">
+                        DAOs de Propósito
+                    </h3>
+                    <span class="text-xs bg-Roxo-Claro text-white px-3 py-1 rounded-full font-Poppins">
+                        Modelo Descentralizado
+                    </span>
+                </div>
+                <img class="transition-transform group-open:rotate-180"
+                    src="./imgs/arrow-down-sign-to-navigate 1.png" alt="">
+            </summary>
+
+            <div class="mt-4 pl-6 p-3 text-sm flex flex-row font-Poppins border-t-3 border-Preto-Suave">
+                <div class="flex flex-col m-3">
+                    <p class="text-justify">
+                        Esqueça as hierarquias. Nas DAOs, seu valor é sua contribuição. Talentos
+                        globais se unem em missões, governados por código e um propósito compartilhado.
+                    </p>
+                </div>
+                <div class="bg-white p-5 rounded-2xl m m-3">
+                    <h2 class="font-bold text-xl">Case de Sucesso: Projeto Netuno (2032 )</h2>
+                    <p class="text-justify">
+                        A DAO 'Ocean Guardians' mobilizou 5.000 especialistas em 72 horas para
+                        desenvolver drones autônomos de limpeza, removendo 1 milhão de toneladas de plástico do
+                        Pacífico em 3 anos.
+                    </p>
+                    <div class="flex flex-col mt-5">
+                        <h3 class="font-bold text-xl">Profissões Relacionadas:</h3>
+                        <div class="flex flex-row gap-3 mt-2">
+                            <a class="p-1 md:text-[10px] bg-Roxo-Claro text-white rounded-2xl">Eng. de Contratos Inteligentes</a>
+                            <a class="p-1 md:text-[10px] bg-Roxo-Claro text-white rounded-2xl">Especialista em Governança</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <details class="group bg-Cinza rounded-2xl shadow-[0_4px_20px_rgba(0,210,106,38)] p-4 w-full">
+            <summary class="flex items-center justify-between cursor-pointer">
+                <div class="flex items-center gap-3">
+                    <div class="w-3 h-3 rounded-full bg-Verde"></div>
+                    <h3 class="font-poppins font-bold text-lg">Hubs de Bio-Inovação</h3>
+                    <span class="text-xs bg-Verde text-white px-3 py-1 rounded-full font-Poppins">
+                        Modelo Regenerativo
+                    </span>
+                </div>
+                <img class="transition-transform group-open:rotate-180"
+                    src="./imgs/arrow-down-sign-to-navigate 1.png" alt="">
+            </summary>
+
+            <div class="mt-4 pl-6 p-3 text-sm flex flex-row font-Poppins border-t-3 border-Preto-Suave">
+                <div class="flex flex-col m-3">
+                    <p class="text-justify">
+                        Laboratórios onde biólogos, designers e IA co-criam soluções, usando
+                        materiais vivos e computação orgânica para um futuro sustentável.
+                    </p>
+                </div>
+                <div class="bg-white p-5 rounded-2xl m m-3">
+                    <h2 class="font-bold text-xl">Princípio Chave: Simbiose Natural</h2>
+                    <p class="text-justify">
+                        Em vez de extrair, nós colaboramos. Usamos a lógica da natureza,
+                        otimizada por IA, para criar produtos que não geram lixo.
+                    </p>
+                    <div class="flex flex-col mt-5">
+                        <h3 class="font-bold text-xl">Profissões Relacionadas:</h3>
+                        <div class="flex flex-row gap-3 mt-2">
+                            <a class="p-1 text-[10px] bg-Verde text-white rounded-2xl">Designer de Materiais Vivos</a>
+                            <a class="p-1 text-[10px] bg-Verde text-white rounded-2xl">Arquiteto de Computação Orgânica</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <details class="group bg-Cinza rounded-2xl shadow-[0_4px_20px_rgba(51,193,255,38)] p-4 w-full">
+            <summary class="flex items-center justify-between cursor-pointer">
+                <div class="flex items-center gap-3">
+                    <div class="w-3 h-3 rounded-full bg-Azul-Claro"></div>
+                    <h3 class="font-poppins font-bold text-lg">Plataformas de Talentos</h3>
+                    <span class="text-xs bg-Azul-Claro text-white px-3 py-1 rounded-full font-Poppins">
+                        Modelo Adaptativo
+                    </span>
+                </div>
+                <img class="transition-transform group-open:rotate-180"
+                    src="./imgs/arrow-down-sign-to-navigate 1.png" alt="">
+            </summary>
+
+            <div class="mt-4 pl-6 p-3 text-sm flex flex-row font-Poppins border-t-3 border-Preto-Suave">
+                <div class="flex flex-col m-3">
+                    <p class="text-justify">
+                        Sua carreira não é um cargo, é um portfólio de habilidades. 
+                        Estas plataformas usam IA para projetar seu crescimento.
+                    </p>
+                </div>
+                <div class="bg-white p-5 rounded-2xl m m-3">
+                    <h2 class="font-bold text-xl">Mecanismo Central: Skill-Graph IA</h2>
+                    <p class="text-justify">
+                        Uma IA mapeia competências e cria trilhas personalizadas para fechar gaps de habilidade.
+                    </p>
+                    <div class="flex flex-col mt-5">
+                        <h3 class="font-bold text-xl">Profissões Relacionadas:</h3>
+                        <div class="flex flex-row gap-3 mt-2">
+                            <a class="p-1 text-[10px] bg-Azul-Claro text-white rounded-2xl">Curador de Conteúdo com IA</a>
+                            <a class="p-1 text-[10px] bg-Azul-Claro text-white rounded-2xl">Coach de Carreira Preditivo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+    </div>
+</section>
+
 
     <!-- Section nuvem de palavras -->
     <section class="w-full min-h-dvh pt-12 px-6 lg:px-16 flex flex-col items-center justify-end relative">
 
         <!-- CARD (AGORA RELATIVE) -->
-        <div class="relative bg-Roxo w-[460px] h-[350px] rounded-t-4xl flex flex-col justify-start py-10 items-center">
+        <div class="relative bg-Roxo w-[360px]  md:w-[460px] md:h-[350px] rounded-t-4xl flex flex-col justify-start py-10 items-center">
             <div class="absolute bottom-full mb-6 w-full text-center flex flex-col gap-4">
                 <h2 class="font-Orbitron text-5xl font-bold">
                     O Futuro está em Suas Mãos
@@ -536,7 +577,7 @@
             </div>
 
             <form action="" class="flex flex-col justify-start items-center">
-                <div class="relative w-[400px]">
+                <div class="relative w-[300px] md:w-[400px]">
                     <input class="w-full py-3 rounded-3xl bg-white text-gray-800 pl-10 placeholder-gray-400" type="text"
                         placeholder="Digite uma Palavra">
                     <!-- Ícone de mais do Font Awesome -->
@@ -546,13 +587,13 @@
                     </span>
                 </div>
 
-                <button class="bg-white text-Roxo font-semibold w-65 py-2 rounded-4xl m-5">
+                <button class="bg-white text-Roxo font-semibold w-45 md:w-65 py-2 rounded-4xl m-5">
                     Adicionar
                 </button>
             </form>
 
 
-            <p class="text-center text-white text-xl mx-2 mt-9">
+            <p class="text-center text-white text-lg md:text-xl mx-2 mt-9">
                 Adicione uma palavra que ache interessante, ou clique em uma das palavras que mais te inspire
             </p>
         </div>
