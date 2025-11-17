@@ -13,16 +13,28 @@ window.addEventListener("load", fixScrollGap);
 window.addEventListener("resize", fixScrollGap);
 
 
-const menuBtn = document.getElementById("menuBtn");
-    const mobileMenu = document.getElementById("mobileMenu");
+const toggle = document.getElementById('darkModeToggle');
+console.log("JS carregado, toggle:", toggle);
 
-    menuBtn.addEventListener("click", () => {
-        mobileMenu.classList.toggle("max-h-0");
-        mobileMenu.classList.toggle("opacity-0");
+// Forçar o site iniciar no light mode
+document.documentElement.classList.remove('dark');
 
-        mobileMenu.classList.toggle("max-h-[500px]"); // altura final para animar
-        mobileMenu.classList.toggle("opacity-100");
-    });
+// Atualiza o checkbox baseado na classe dark
+toggle.checked = document.documentElement.classList.contains('dark');
+
+toggle.addEventListener('change', () => {
+    console.log("Toggle clicado. Estado:", toggle.checked);
+
+    if(toggle.checked){
+        console.log("Ativando dark mode");
+        document.documentElement.classList.add('dark');
+    } else {
+        console.log("Desativando dark mode");
+        document.documentElement.classList.remove('dark');
+    }
+});
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
   console.log("✓ Script iniciado");
