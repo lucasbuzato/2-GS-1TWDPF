@@ -1,3 +1,20 @@
+const menuBtn = document.getElementById("menuBtn");
+const mobileMenu = document.getElementById("mobileMenu");
+
+menuBtn.addEventListener("click", () => {
+    const isOpen = mobileMenu.classList.contains("max-h-0");
+
+    if (isOpen) {
+        mobileMenu.classList.remove("max-h-0", "opacity-0");
+        mobileMenu.classList.add("max-h-[400px]", "opacity-100");
+    } else {
+        mobileMenu.classList.remove("max-h-[400px]", "opacity-100");
+        mobileMenu.classList.add("max-h-0", "opacity-0");
+    }
+});
+
+
+
 function fixScrollGap() {
   const sc = document.querySelector(".scrollable");
   if (!sc) return;
@@ -12,35 +29,34 @@ function fixScrollGap() {
 window.addEventListener("load", fixScrollGap);
 window.addEventListener("resize", fixScrollGap);
 
-
-const toggle = document.getElementById('darkModeToggle');
+const toggle = document.getElementById("darkModeToggle");
 console.log("JS carregado, toggle:", toggle);
 
 // Forçar o site iniciar no light mode
-document.documentElement.classList.remove('dark');
+document.documentElement.classList.remove("dark");
 
 // Atualiza o checkbox baseado na classe dark
-toggle.checked = document.documentElement.classList.contains('dark');
+toggle.checked = document.documentElement.classList.contains("dark");
 
-toggle.addEventListener('change', () => {
-    console.log("Toggle clicado. Estado:", toggle.checked);
+toggle.addEventListener("change", () => {
+  console.log("Toggle clicado. Estado:", toggle.checked);
 
-    if(toggle.checked){
-        console.log("Ativando dark mode");
-        document.documentElement.classList.add('dark');
-    } else {
-        console.log("Desativando dark mode");
-        document.documentElement.classList.remove('dark');
-    }
+  if (toggle.checked) {
+    console.log("Ativando dark mode");
+    document.documentElement.classList.add("dark");
+  } else {
+    console.log("Desativando dark mode");
+    document.documentElement.classList.remove("dark");
+  }
 });
-
-
 
 document.addEventListener("DOMContentLoaded", () => {
   console.log("✓ Script iniciado");
 
   if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") {
-    console.error("GSAP ou ScrollTrigger não encontrado. Confere as CDNs no HTML.");
+    console.error(
+      "GSAP ou ScrollTrigger não encontrado. Confere as CDNs no HTML."
+    );
     return;
   }
 
@@ -50,7 +66,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const scrollArea = document.querySelector("#cards-scroll");
 
   if (!section || !scrollArea) {
-    console.error("Elemento #carreiras-section ou #cards-scroll não encontrado.");
+    console.error(
+      "Elemento #carreiras-section ou #cards-scroll não encontrado."
+    );
     return;
   }
 
@@ -61,8 +79,8 @@ document.addEventListener("DOMContentLoaded", () => {
   function initScroll() {
     // remove triggers/tweens antigos só do scrollArea
     ScrollTrigger.getAll()
-      .filter(t => t.trigger === section)
-      .forEach(t => t.kill());
+      .filter((t) => t.trigger === section)
+      .forEach((t) => t.kill());
     gsap.killTweensOf(scrollArea);
 
     const sectionHeight = section.clientHeight;
@@ -91,8 +109,8 @@ document.addEventListener("DOMContentLoaded", () => {
         onLeave: () => console.log("ScrollTrigger: leave"),
         onEnterBack: () => console.log("ScrollTrigger: enterBack"),
         onLeaveBack: () => console.log("ScrollTrigger: leaveBack"),
-        markers: false
-      }
+        markers: false,
+      },
     });
 
     ScrollTrigger.refresh();
@@ -116,4 +134,3 @@ document.addEventListener("DOMContentLoaded", () => {
     ScrollTrigger.refresh();
   });
 });
-
