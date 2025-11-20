@@ -1,4 +1,4 @@
-# Gs-RWD-api
+# 2-GS-1TWDPF
 
 # Passo a Passo para Funcionamento
 - cd 2-GS-1TWDPF
