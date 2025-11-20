@@ -1,3 +1,5 @@
+/* -------------------------------------------------- Criação e Controle dos Cards -------------------------------------------------- */
+
 import { carreiras } from "./arrayCardsGs.js";
 
 const cardsContainer = document.querySelector("#cards-container");
@@ -5,6 +7,7 @@ const categoriaBtns = document.querySelectorAll("#carreiras-section a");
 
 let categoriaAtiva = null;
 
+/* -------------------------------------------- Função que cria o card individual -------------------------------------------- */
 function criarCard(card) {
   const cardEl = document.createElement("div");
   cardEl.className =
@@ -21,16 +24,13 @@ function criarCard(card) {
             ${card.area}
           </span>
 
-          <h2 class="font-bold text-lg text-white leading-tight">${
-            card.titulo
-          }</h2>
+          <h2 class="font-bold text-lg text-white leading-tight">${card.titulo}</h2>
 
           <p class="text-sm text-Cinza">${card.area}</p>
           <p class="text-sm text-Cinza">${card.formacao}</p>
         </div>
       </div>
 
-      <!-- BACK (AGORA DENTRO DA flip-inner) -->
       <div class="flip-back absolute inset-0 bg-Roxo text-white dark:text-white p-6 rounded-3xl overflow-y-auto">
 
         <h3 class="font-bold text-xl mb-2">${card.titulo}</h3>
@@ -50,6 +50,7 @@ function criarCard(card) {
     </div>
   `;
 
+  // alterna o flip-front / flip-back
   cardEl.addEventListener("click", () => {
     cardEl.classList.toggle("flipped");
   });
@@ -57,6 +58,7 @@ function criarCard(card) {
   return cardEl;
 }
 
+/* -------------------------------------------- Renderização dos cards -------------------------------------------- */
 function renderCards(filtro = null) {
   cardsContainer.innerHTML = "";
 
@@ -67,12 +69,12 @@ function renderCards(filtro = null) {
   });
 }
 
-// ===== BOTÕES DE CATEGORIA =====
+/* -------------------------------------------- Controle dos botões de categoria -------------------------------------------- */
 categoriaBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
     const categoria = btn.innerText.trim();
 
-    // Se clicar no que já está ativo → limpa filtro
+    // Se clicar no botão já ativo → limpa o filtro
     if (categoriaAtiva === categoria) {
       categoriaAtiva = null;
       categoriaBtns.forEach((b) => b.classList.remove("ativo"));
@@ -80,6 +82,7 @@ categoriaBtns.forEach((btn) => {
       return;
     }
 
+    // troca categoria ativa
     categoriaAtiva = categoria;
 
     categoriaBtns.forEach((b) => b.classList.remove("ativo"));
@@ -89,4 +92,5 @@ categoriaBtns.forEach((btn) => {
   });
 });
 
+/* -------------------------------------------- Render inicial dos cards -------------------------------------------- */
 renderCards();
