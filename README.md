@@ -34,4 +34,4 @@ Adicione aqui a URL publicada
 - **Lucas Buzato Venarusso RM562332**  
 - **Larissa Vicenzi RM566506** 
 - **Luana Gomes Silva RM563284** 
-- **Melyssa Silva RM564268**  
+- **Melyssa Santos RM564268**  

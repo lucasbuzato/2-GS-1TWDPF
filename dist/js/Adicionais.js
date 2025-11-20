@@ -1,43 +1,42 @@
+/* --------------------------------------------Menu Hamburguer-------------------------------------------- */
 const menuBtn = document.getElementById("menuBtn");
 const mobileMenu = document.getElementById("mobileMenu");
 
 menuBtn.addEventListener("click", () => {
-    const isOpen = mobileMenu.classList.contains("max-h-0");
+  const isOpen = mobileMenu.classList.contains("max-h-0");
 
-    if (isOpen) {
-        mobileMenu.classList.remove("max-h-0", "opacity-0");
-        mobileMenu.classList.add("max-h-[400px]", "opacity-100");
-    } else {
-        mobileMenu.classList.remove("max-h-[400px]", "opacity-100");
-        mobileMenu.classList.add("max-h-0", "opacity-0");
-    }
+  if (isOpen) {
+    mobileMenu.classList.remove("max-h-0", "opacity-0");
+    mobileMenu.classList.add("max-h-[400px]", "opacity-100");
+  } else {
+    mobileMenu.classList.remove("max-h-[400px]", "opacity-100");
+    mobileMenu.classList.add("max-h-0", "opacity-0");
+  }
 });
 
-
-
+/* -------------------------------------------- Corrige gap da scrollbar-------------------------------------------- */
 function fixScrollGap() {
   const sc = document.querySelector(".scrollable");
   if (!sc) return;
 
-  // largura real da scrollbar (mesmo quando escondida)
   const scrollbarWidth = sc.offsetWidth - sc.clientWidth;
-
-  // ajusta a variável CSS usada pela classe .scroll-fill
   sc.style.setProperty("--scrollbar-width", scrollbarWidth + "px");
 }
 
 window.addEventListener("load", fixScrollGap);
 window.addEventListener("resize", fixScrollGap);
 
+/* -------------------------------------------- Botão Dark Mode -------------------------------------------- */
 const toggle = document.getElementById("darkModeToggle");
 console.log("JS carregado, toggle:", toggle);
 
-// Forçar o site iniciar no light mode
+// Garante que o site sempre inicia no modo light
 document.documentElement.classList.remove("dark");
 
-// Atualiza o checkbox baseado na classe dark
+// Ajusta visualmente o checkbox
 toggle.checked = document.documentElement.classList.contains("dark");
 
+// Alternância do modo
 toggle.addEventListener("change", () => {
   console.log("Toggle clicado. Estado:", toggle.checked);
 
@@ -50,13 +49,12 @@ toggle.addEventListener("change", () => {
   }
 });
 
+/* -------------------------------------------- Gsap — Animação de Scroll dos Cards -------------------------------------------- */
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("✓ Script iniciado");
 
+  // Verifica se o GSAP existe
   if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") {
-    console.error(
-      "GSAP ou ScrollTrigger não encontrado. Confere as CDNs no HTML."
-    );
+    console.error("GSAP ou ScrollTrigger não encontrado.");
     return;
   }
 
@@ -66,18 +64,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const scrollArea = document.querySelector("#cards-scroll");
 
   if (!section || !scrollArea) {
-    console.error(
-      "Elemento #carreiras-section ou #cards-scroll não encontrado."
-    );
+    console.error("Elemento de scroll não encontrado.");
     return;
   }
 
-  // garante posição relativa/z-index
+  // Previne bug de stack do GSAP
   section.style.position = section.style.position || "relative";
   scrollArea.style.position = scrollArea.style.position || "relative";
 
+  /* -------------------------------------------- Controle de animação do GSAP -------------------------------------------- */
   function initScroll() {
-    // remove triggers/tweens antigos só do scrollArea
+    // Remove animações antigas para evitar duplicação
     ScrollTrigger.getAll()
       .filter((t) => t.trigger === section)
       .forEach((t) => t.kill());
@@ -85,11 +82,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const sectionHeight = section.clientHeight;
     const areaHeight = scrollArea.scrollHeight;
-    const viewportH = window.innerHeight;
-
     const extra = Math.max(0, areaHeight - sectionHeight);
+
     if (extra === 0) {
-      console.log("Nenhum overflow nos cards — ScrollTrigger não será criado.");
+      console.log("Nenhum overflow nos cards.");
       ScrollTrigger.refresh();
       return;
     }
@@ -105,10 +101,6 @@ document.addEventListener("DOMContentLoaded", () => {
         pin: true,
         pinSpacing: true,
         invalidateOnRefresh: true,
-        onEnter: () => console.log("ScrollTrigger: enter"),
-        onLeave: () => console.log("ScrollTrigger: leave"),
-        onEnterBack: () => console.log("ScrollTrigger: enterBack"),
-        onLeaveBack: () => console.log("ScrollTrigger: leaveBack"),
         markers: false,
       },
     });
@@ -116,7 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ScrollTrigger.refresh();
   }
 
-  // aguarda load completo e garante medidas corretas
+  /* -------------------------------------------- Função que roda apartir do momento que tudo carregar -------------------------------------------- */
   function waitForLoadThenInit() {
     if (document.readyState === "complete") {
       initScroll();
@@ -129,8 +121,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
   waitForLoadThenInit();
 
-  // resize só refresca triggers
+  /* -------------------------------------------- ressincronizando o ScrollTrigger -------------------------------------------- */
   window.addEventListener("resize", () => {
     ScrollTrigger.refresh();
+  });
+});
+
+/* --------------------------------------------Botão de voltar para o topo -------------------------------------------- */
+console.log("✓ Script Botão Topo carregado");
+
+// Elemento do botão
+const backToTopBtn = document.getElementById("backToTop");
+
+// Mostra/esconde baseado na rolagem
+window.addEventListener("scroll", () => {
+  const firstSectionHeight = document.querySelector("section").offsetHeight;
+
+  if (window.scrollY > firstSectionHeight) {
+    backToTopBtn.classList.remove("opacity-0", "pointer-events-none");
+    backToTopBtn.classList.add("opacity-100");
+  } else {
+    backToTopBtn.classList.add("opacity-0", "pointer-events-none");
+    backToTopBtn.classList.remove("opacity-100");
+  }
+});
+
+// Ação: voltar ao topo
+backToTopBtn.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
   });
 });
