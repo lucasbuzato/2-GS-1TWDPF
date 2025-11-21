@@ -28,7 +28,7 @@ O projeto inclui Dark Mode, layout responsivo e interatividade.
 https://github.com/lucasbuzato/2-GS-1TWDPF.git
 
 ## GitHub Pages
-Adicione aqui a URL publicada
+https://lucasbuzato.github.io/2-GS-1TWDPF/
 
 ## 👥 Integrantes
 - **Lucas Buzato Venarusso RM562332**  
